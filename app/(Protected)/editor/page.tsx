@@ -23,7 +23,9 @@ const page = async () => {
           <p className=" text-2xl  mb-5   text-gray-300">
             No Note Yet Create One
           </p>
-          <CreateDialog />
+          <div className=" w-[70%]">
+            <CreateDialog />
+          </div>
         </div>
       ) : (
         ""

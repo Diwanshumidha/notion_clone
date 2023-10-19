@@ -16,6 +16,7 @@ const resolver = async (id: string) => {
         id,
       },
     });
+    if (!res?.title) return notFound();
     return res;
   } catch (error) {
     return notFound();
