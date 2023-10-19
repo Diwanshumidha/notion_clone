@@ -3,7 +3,8 @@ import Provider from "./Provider";
 import "./globals.css";
 
 export const metadata = {
-  title: "Notion Clone",
+  title: "Norton --Notion Clone",
+  description: "Norton is a text Editor based on Notion",
 };
 
 export default function RootLayout({
