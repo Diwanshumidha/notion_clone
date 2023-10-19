@@ -19,7 +19,8 @@ const page = async ({ params }: { params: { id: string } }) => {
           className=" w-full h-full object-cover select-none"
           src="https://media.istockphoto.com/id/1152192908/photo/marble-purple-blue-black-neon-pattern-abstract-wavy-background-colorful-gradient-marbled.webp?b=1&s=170667a&w=0&k=20&c=EDCY9LKYo1LbAszTj80V5c_e32fOY-RGU4XKxhWlPlQ="
         ></img>
-        <div className=" group-hover:visible invisible text-black px-3 py-1 rounded-lg cursor-pointer font-semibold absolute right-10 bottom-3 bg-white">
+        {/* TODO:Implement Image */}
+        <div className=" group-hover:visible hidden invisible text-black px-3 py-1 rounded-lg cursor-pointer font-semibold absolute right-10 bottom-3 bg-white">
           Customize
         </div>
       </div>

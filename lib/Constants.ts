@@ -21,3 +21,5 @@ type Route = {
       path: "/editor",
     },
   ];
+
+export const GITHUB_Link = 'https://github.com/Diwanshumidha/notion_clone'

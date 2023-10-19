@@ -30,8 +30,8 @@ export default function NoteEditor({
   }, [DebouncedTitle]);
 
   return (
-    <div className=" relative ">
-      <div className=" absolute right-11 bg-gray-700 px-2 py-1 rounded-lg ">
+    <div className=" relative overflow-x-hidden ">
+      <div className=" absolute right-11 sm:!block hidden bg-gray-700 px-2 py-1 rounded-lg ">
         {isSaving ? "Saving.." : "Saved"}
       </div>
       <CraftEditor

@@ -32,7 +32,7 @@ const page = async ({ params }: { params: { id: string } }) => {
           className=" w-full h-full object-cover select-none"
           src={Editor?.image_url || Images[0]}
         ></img>
-        <div className=" group-hover:visible invisible text-black px-3 py-1 rounded-lg cursor-pointer font-semibold absolute right-10 bottom-3 bg-white">
+        <div className=" group-hover:visible hidden invisible text-black px-3 py-1 rounded-lg cursor-pointer font-semibold absolute right-10 bottom-3 bg-white">
           Customize
         </div>
       </div>

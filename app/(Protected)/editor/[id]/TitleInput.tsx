@@ -20,7 +20,7 @@ const TitleInput = ({ title, id }: Props) => {
 
   return (
     <input
-      className=" bg-transparent pl-[50px] my-3 outline-none border-none text-4xl"
+      className=" bg-transparent w-full pl-[50px] my-3 outline-none border-none text-4xl"
       value={Title}
       onChange={(e) => setTitle(e.target.value)}
     />

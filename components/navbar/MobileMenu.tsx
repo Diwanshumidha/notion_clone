@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
 import { NavLink } from "./Navlink";
-import { Menu, X } from "lucide-react";
+import { LogOut, Menu, X } from "lucide-react";
 import { routes } from "@/lib/Constants";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { Button } from "../ui/button";
 
 const MobileMenu = () => {
   const [opened, setopen] = useState(false);
+  const { data: user, status } = useSession();
   return (
     <>
       <div onClick={() => setopen(true)}>
@@ -45,11 +48,28 @@ const MobileMenu = () => {
             })}
           </ul>
           <ul className=" pb-5">
-            <li className=" flex items-center gap-2">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+            <li className=" flex items-center flex-wrap justify-between gap-2">
+              {status === "authenticated" ? (
+                <div className=" flex gap-4">
+                  <Avatar>
+                    <AvatarImage src={user.user?.image || undefined} />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p>{user.user?.name}</p>
+                    <span className=" text-[15px] text-gray-400">
+                      {user.user?.email}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <Button onClick={() => signIn()}>Sign In</Button>
+              )}
+              {status === "authenticated" ? (
+                <Button onClick={() => signOut()} variant={"outline"}>
+                  <LogOut />
+                </Button>
+              ) : null}
             </li>
           </ul>
         </div>

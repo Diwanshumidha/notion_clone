@@ -4,7 +4,7 @@ import React from "react";
 import { NavLink } from "./Navlink";
 
 import MobileMenu from "./MobileMenu";
-import { routes } from "@/lib/Constants";
+import { GITHUB_Link, routes } from "@/lib/Constants";
 import { Github } from "lucide-react";
 import AccountDropdown from "./Dropdown";
 
@@ -22,7 +22,7 @@ function Navbar() {
         </li>
       </ul>
 
-      <ul className="flex items-center space-x-10 max-md:hidden">
+      <ul className="flex items-center space-x-10 max-md:!hidden">
         {routes.map((item, index) => {
           return (
             <li key={index} className={`list-none text-gray-500`}>
@@ -36,14 +36,17 @@ function Navbar() {
             </li>
           );
         })}
+        <li className={`list-none text-gray-500`}>
+          <a
+            className=" hover:text-foreground  cursor-pointer relative py-1"
+            href={"https://diwanshumidha.vercel.app/"}
+            target="_blank"
+          >
+            Portfolio
+          </a>
+        </li>
         <li className=" flex items-center gap-2">
-          {/* TODO: Make This github Into Constants */}
-          <a href={"github"} target="_blank">
-            {/* <img
-              className=" text-primary w-[24px] h-[24px] cursor-pointer"
-              alt="srccode"
-              src="/icons/github.svg"
-            /> */}
+          <a href={GITHUB_Link} target="_blank">
             <Github className="hover:text-primary" />
             <span className=" sr-only">Source Code</span>
           </a>
